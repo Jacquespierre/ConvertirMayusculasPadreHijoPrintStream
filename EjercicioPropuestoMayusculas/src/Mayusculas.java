@@ -28,7 +28,7 @@ public class Mayusculas {
         try {
             //ESTO SIEMPRE SE REALIZA
             //Genero el archivo Hijo
-            File directorio = new File(".\\out\\production\\EjercicioPropuestoMayusculas\\Mayusculas");
+            File directorio = new File("EjercicioPropuestoMayusculas");
             //Genero el archivo a ejecutar
             ProcessBuilder pb = new ProcessBuilder("java", "Hijo");
             //Establezco el directorio donde se ejecuta
@@ -42,7 +42,8 @@ public class Mayusculas {
             BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));
 
             //Mientras lea lineas de texto
-            while ((texto = br2.readLine()) != ""){
+            while ((texto = br2.readLine()) != null && !texto.isEmpty()){
+                System.out.println("Introduce algo para transformar en mayuclas");
                 //Las imprimo del PrintStream
                 ps.println(texto);
                 //Vacío el caché
@@ -51,7 +52,6 @@ public class Mayusculas {
                 if((texto = br2.readLine()) != null){
                     System.out.println(texto);
                 }
-
             }
             System.out.println("Salida del programa");
             //Compruebo errores
